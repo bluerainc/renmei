@@ -1,7 +1,7 @@
 /* 仁美里的城藝文旅 — gallery style */
 :root{
   --ink:#3e3e42; --muted:#6b727a; --line:#dcdcdf; --mat:#f3f3f1; --warm:#faf9f6; --bg:#fff;
-  --accent:#1f2f5c; --accent-soft:#e9ecf4;
+  --accent:#193767; --accent-soft:#e9ecf4;
   --serif:"Cormorant Garamond","Noto Serif TC","Songti TC",serif;
   --sans:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
   --gutter:clamp(16px,4vw,48px);
@@ -43,11 +43,10 @@ nav a:hover,nav a[aria-current]{text-decoration:underline;text-underline-offset:
 .menu-btn[aria-expanded=true] span:nth-child(2){transform:translateY(-4.5px) rotate(-45deg)}
 
 /* billboard */
-.billboard{position:relative;display:grid;min-height:min(86vh,820px);background:#9a9a9a;overflow:hidden;color:#fff}
+.billboard{position:relative;display:grid;min-height:min(86vh,820px);background:#e9e7e2;overflow:hidden;color:#fff}
 .billboard.small{min-height:clamp(320px,52vh,520px)}
 .bb-img{grid-area:1/1;width:100%;height:100%;object-fit:cover}
-.billboard::after{content:"";grid-area:1/1;background:rgba(62,62,66,.42)}
-.bb-text{grid-area:1/1;z-index:1;align-self:center;justify-self:center;text-align:center;padding:40px var(--gutter);max-width:900px}
+.bb-text{grid-area:1/1;z-index:1;align-self:center;justify-self:center;text-align:center;background:var(--accent);padding:clamp(28px,4vw,52px) clamp(28px,5vw,72px);margin:24px var(--gutter);max-width:900px;box-shadow:0 24px 50px -24px rgba(10,20,45,.55)}
 .billboard h1{font-size:clamp(46px,9vw,112px);line-height:1.05}
 .billboard.small h1{font-size:clamp(38px,6vw,76px)}
 .bb-sub{font:300 clamp(15px,1.6vw,18px)/1.8 var(--sans);margin:18px auto 0;max-width:620px;letter-spacing:.08em}
@@ -137,7 +136,7 @@ a.mat{cursor:pointer}
 .embed{position:relative;overflow:hidden;background:#e5e5e5}
 .embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .embed.video{aspect-ratio:16/9}
-.embed.map{aspect-ratio:16/7;filter:grayscale(.6)}
+.embed.map{aspect-ratio:16/7}
 
 .more{padding-bottom:20px}
 
