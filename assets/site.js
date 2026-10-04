@@ -6,6 +6,23 @@ btn?.addEventListener('click', () => {
   btn.setAttribute('aria-expanded', open);
 });
 
+// Carousels
+document.querySelectorAll('.carousel').forEach((c) => {
+  const track = c.querySelector('.track');
+  const prev = c.querySelector('.prev');
+  const next = c.querySelector('.next');
+  const step = () => track.clientWidth * 0.9;
+  const update = () => {
+    prev.disabled = track.scrollLeft <= 4;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+  };
+  prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+});
+
 // Lightbox for zoomable images
 const zooms = [...document.querySelectorAll('button.zoom img')];
 const lb = document.querySelector('.lightbox');
