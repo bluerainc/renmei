@@ -1,0 +1,6 @@
+renmei-images/
+manifest.json
+*.zip
+*.tmp
+Thumbs.db
+desktop.ini
