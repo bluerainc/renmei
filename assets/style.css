@@ -190,3 +190,15 @@ a.mat{cursor:pointer}
   .foot-grid{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* billboard variants */
+.billboard.side{display:block;min-height:0;background:#fff}
+.billboard.side .bb-img{width:100%;height:auto;object-fit:contain}
+.billboard.side .bb-text{position:absolute;top:50%;transform:translateY(-50%);height:88%;max-height:none;right:var(--gutter);margin:0;width:clamp(240px,24vw,340px);display:flex;flex-direction:column;justify-content:center;text-align:left;padding:clamp(24px,3vw,44px)}
+.billboard.side .bb-sub{margin-left:0}
+.billboard.veil .bb-text{background:rgba(60,60,64,.42);box-shadow:none;-webkit-backdrop-filter:grayscale(1);backdrop-filter:grayscale(1)}
+.billboard.tall{min-height:min(88vh,860px)}
+.billboard.tall .bb-img{object-position:center 40%}
+@media (max-width:820px){
+  .billboard.side .bb-text{position:static;width:auto;margin:0;padding:32px var(--gutter)}
+}
